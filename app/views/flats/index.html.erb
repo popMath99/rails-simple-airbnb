@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <h1 class="mb-4">All the flats</h1>
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><%= flat.name %></h5>
+            <p class="card-text"><%= flat.address%></p>
+              <div class="d-flex justify-content-between">
+                <p class="card-text"><%= flat.price_per_night%>€</p>
+                <p class="card-text"><%= flat.number_of_guests%></p>
+              </div>
+            <%= link_to "Know more about", flat_path(flat) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to "Add a flat", new_flat_path(@flat)%>
+  </div>
+</div>
